@@ -13,16 +13,12 @@ Features
 
 Tech Stack
 Next.js
-Tailwind CSS – Utility-first CSS framework
+Tailwind CSS
 
 Getting Started
-git clone https://github.com/yourusername/vercel-support-transcript.git
-cd vercel-support-transcript
-
 - npm install
 - npm run dev
+- Then open http://localhost:3000 in your browser.
 
 Live Site deployed on Vercel
 https://vercel-cse-assessment-chi.vercel.app/
-
-
