@@ -19,9 +19,10 @@ Getting Started
 git clone https://github.com/yourusername/vercel-support-transcript.git
 cd vercel-support-transcript
 
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 Live Site deployed on Vercel
+https://vercel-cse-assessment-chi.vercel.app/
 
 
