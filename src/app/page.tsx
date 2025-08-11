@@ -34,7 +34,7 @@ If the issue persists, our next step would be checking the function logs for you
 
 Best regards,
 Gavin Walsh
-Alex Support Engineer`,
+Support Engineer`,
   },
   {
     who: "Alex",
