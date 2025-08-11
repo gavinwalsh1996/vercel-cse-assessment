@@ -1,103 +1,105 @@
-import Image from "next/image";
+type Msg = {
+  who: "Alex" | "Gavin Walsh";
+  at: string;
+  text: string;
+};
+
+const query = {
+  subject: "500 Internal Server Error on Production Site",
+  description: `Our production site is showing a "500 Internal Server Error" on every page, which is quite concerning. I noticed that the preview deployments from pull requests are working fine, so it seems limited to the production environment. I tried clearing the cache and redeploying, but the issue persists.`,
+  at: "10/08/2025, 12:49:24",
+};
+
+const messages: Msg[] = [
+  {
+    who: "Gavin Walsh",
+    at: "10/08/2025, 14:28:54",
+    text: `Hi Alex,
+
+Thanks for reaching out about this issue.
+I understand that this is urgent, so I will do my best to help get your production environment back up and running as quickly as possible!
+
+You mentioned your production site is returning a 500 error on every page, while preview deployments work fine. This often points to a difference between the production and preview environments. In many cases, it's because the live production site is missing some settings (like API URLs or login keys) that tell it where to get its data.
+
+Since this is one of the most common issues, let's start here by checking your production environment variables: 
+
+1. In your Vercel Dashboard, open your project.
+2. Go to Settings -> Environment Variables.
+3. In the Environments dropdown, switch from Preview and Development to Production.
+
+If the variables and values are not the same in both environments, add the missing variable names and corresponding values to Production, then redeploy the site.
+
+Once you've tried this, let me know if it resolves the error.
+If the issue persists, our next step would be checking the function logs for your latest production deployment in the Vercel Dashboard which we can use to troubleshoot further.
+
+Best regards,
+Gavin Walsh
+Alex Support Engineer`,
+  },
+  {
+    who: "Alex",
+    at: "10/08/2025, 14:28:57",
+    text: `Thanks, Gavin. I'll check the environment variables in the production settings. I appreciate your guidance on this. Let me update those and redeploy to see if it resolves the issue.`,
+  },
+  {
+    who: "Gavin Walsh",
+    at: "10/08/2025, 14:30:27",
+    text: `Sounds good. Please don't hesitate to reach out if you have any further questions.`,
+  },
+  {
+    who: "Alex",
+    at: "10/08/2025, 14:30:29",
+    text: `Thank you, Gavin. I'll let you know if I need any more help. I appreciate your assistance!`,
+  },
+  {
+    who: "Gavin Walsh",
+    at: "10/08/2025, 14:36:24",
+    text: `You're very welcome, happy to help!`,
+  },
+  {
+    who: "Alex",
+    at: "10/08/2025, 14:36:27",
+    text: `Thanks again! Have a great day!`,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main className="min-h-screen bg-[#f4f6f9] p-4 sm:p-6">
+      <div className="mx-auto max-w-2xl space-y-6">
+        <section className="rounded-lg border border-gray-200 bg-white shadow-sm">
+          <div className="p-4">
+            <h2 className="mb-2 text-lg font-semibold text-[#16325c]">
+              {query.subject}
+            </h2>
+            <p className="whitespace-pre-wrap text-sm text-[#16325c]">
+              {query.description}
+            </p>
+          </div>
+        </section>
+        <section className="space-y-3">
+          {messages.map((m, i) => {
+            const mine = m.who === "Gavin Walsh";
+            return (
+              <div
+                key={i}
+                className={`w-fit max-w-full rounded-lg border shadow-sm ${
+                  mine
+                    ? "ml-auto border-[#cfe5fb] bg-[#eaf5fe] text-[#16325c]"
+                    : "border-gray-200 bg-white text-[#16325c]"
+                }`}
+              >
+                <div className="px-3 pt-2 text-[11px] text-[#5e6a81]">
+                  {m.who} • {m.at}
+                </div>
+                <div className="whitespace-pre-wrap px-3 pb-3 text-sm leading-relaxed">
+                  {m.text}
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      </div>
+    </main>
   );
 }
