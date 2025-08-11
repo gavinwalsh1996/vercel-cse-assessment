@@ -22,3 +22,6 @@ Getting Started
 
 Live Site deployed on Vercel
 https://vercel-cse-assessment-chi.vercel.app/
+
+Notes
+In a real support case, I would also confirm additional details (e.g., domain, framework version, whether variables are correctly prefixed with NEXT_PUBLIC_ if needed) to rule out related issues.
